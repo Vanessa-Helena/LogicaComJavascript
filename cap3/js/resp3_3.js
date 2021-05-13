@@ -10,11 +10,11 @@ function parquimetro() {
 
 	var valor = Number(inValor.value);
 
-	/*outTroco.textContent = "";
-	outTempo.textContent = "";*/
+	outTroco.textContent = "";
+	outTempo.textContent = "";
 
 	if (valor == "" || isNaN(valor)) {
-		alert("Informar valor válido");
+		alert("Informar valor");
 		inValor.focus();
 		return;
 	}
@@ -28,8 +28,30 @@ function parquimetro() {
 	if(valor >= 1.00 && valor < 1.75) {
 		troco = valor % 1;
 
-		outTempo.textContent = "tempo: 30 min";
-		outTroco.textContent = "Troco R$: " + troco.toFixed(2);
+		outTempo.textContent = "Tempo: 30 min";
+		if (troco != 0) {
+			outTroco.textContent = "Troco R$: " + troco.toFixed(2);
+		}
+	}
+
+	if(valor >= 1.75 && valor < 3.00) {
+		troco = valor % 1.75;
+
+		outTempo.textContent = "Tempo: 60 min";
+		if (troco != 0) {
+			outTroco.textContent = "Troco R$: " + troco.toFixed(2);
+		}
+	}
+
+	if(valor >= 3.00) {
+		troco = valor - 3.00;
+
+		outTempo.textContent = "Tempo: 120 min";
+
+		if (troco != 0) {
+			outTroco.textContent = "Troco R$: " + troco.toFixed(2);
+		}
+		
 	}
 
 }
