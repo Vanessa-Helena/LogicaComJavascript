@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // solicita o número e repete a leitura enquanto inválido
+        do {
+            var num = Number(prompt("Número: "));
+            if (num == 0 || isNaN(num)) {
+                alert("Digite um número válido...");
+            }
+        }while (num == 0 || isNaN(num));
+
+        // declara e inicializa variável que irá exibir pares
+        var pares = "Pares entre 1 e " + num + ": ";
+
+        // isola o primeiro par (para evitar última vírgula)
+        if (num > 1) {
+            pares = pares + "2";
+        }
+
+        // laços para acumular pares (inicia em 4, pois o 2 já foi atribuído)
+
+        for (var i = 4; i<= num; i= i + 2) {
+            pares = pares + ", " + i;
+        }
+        // exibe lista dos números pares
+        alert(pares);
+    </script>
+</body>
+</html>
