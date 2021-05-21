@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        // solicita o número e repete a leitura enquanto inválido
-        do {
-            var num = Number(prompt("Número: "));
-            if (num == 0 || isNaN(num)) {
-                alert("Digite um número válido...");
-            }
-        }while (num == 0 || isNaN(num));
+<script>
+	alert("Digite 0 para sair");
+	// início da repetição
+	do {
+		var num = Number(prompt("Número: "));
 
-        // declara e inicializa variável que irá exibir pares
-        var pares = "Pares entre 1 e " + num + ": ";
+		if (num == 0 || isNaN(num)) {
+			var sair = confirm("Confirma saída?"); // solicita confirmação do usuário
+			if (sair) {
+				break; // sai da repetição
+			} else {
+				continue; // volta ao início do laço
+			}
+		}
+		// se par, mostra o dobro; ímpar, mostra o triplo
+		if (num % 2 == 0) {
+			alert("O dobro de " + num + " é: " + num * 2);
+		} else {
+			alert("O triplo de " + num + " é: " + num * 3);
+		}
+	} while (true); // // enquanto verdade (só sai do laço, pelo break)
 
-        // isola o primeiro par (para evitar última vírgula)
-        if (num > 1) {
-            pares = pares + "2";
-        }
-
-        // laços para acumular pares (inicia em 4, pois o 2 já foi atribuído)
-
-        for (var i = 4; i<= num; i= i + 2) {
-            pares = pares + ", " + i;
-        }
-        // exibe lista dos números pares
-        alert(pares);
-    </script>
-</body>
-</html>
+	alert("Bye, bye");
+</script>
