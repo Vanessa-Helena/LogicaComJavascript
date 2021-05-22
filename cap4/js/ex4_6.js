@@ -1,4 +1,4 @@
-function vericarPrimo() {
+function verificarPrimo() {
 	// cria referência aos elementos da página
 	var inNumero = document.getElementById('inNumero');
 	var outResposta = document.getElementById('outResposta');
@@ -28,7 +28,7 @@ function vericarPrimo() {
 	} else {
 		outResposta.textContent = num + " Não é primo";
 	}
-	// referencia elemento e após associa function ao evento click
-	var btVerificarPrimo = document.getElementById("btVerificarPrimo");
-	btVerificarPrimo.addEventListener("click", vericarPrimo);
-}
+}	
+// referencia elemento e após associa function ao evento click
+var btVerificarPrimo = document.getElementById('btVerificarPrimo');
+btVerificarPrimo.addEventListener("click", verificarPrimo);
