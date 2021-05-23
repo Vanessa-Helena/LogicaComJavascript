@@ -12,18 +12,18 @@ function verificarPrimo() {
 		return;
 	}
 
-	var numDivisores = 0; // declara e inicializa contador
+	var temDivisor = 0; // declara e inicializa a variável tipo flag
 
-	// percorre todos os possíveis divisores do número
-	for (var i = 1; i <= num; i++) {
-	 	// verifica se i (1, 2, 3...) é divisor do num
+	// percorre todos os possíveis divisores do num
+	for (var i = 2; i <= num / 2; i++) {
 	 	if (num % i == 0) {
-	 		numDivisores++; // se é, incrementa contador
+	 		temDivisor = 1; // muda o flag
+			break; // sai da repetição
 	 	}
 	}
 
-	// se possui apenas 2 divisores, é primo
-	if (numDivisores == 2) {
+	// se num > 1 e não possui divisor
+	if (num > 1 && !temDivisor) {
 		outResposta.textContent = num + " É primo";
 	} else {
 		outResposta.textContent = num + " Não é primo";
