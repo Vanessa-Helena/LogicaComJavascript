@@ -10,7 +10,7 @@ function preencherEstrelas() {
         inNumero.focus();
         return;
     }
-    var estrela = ""; // declara variável que irá concatenar as estrelas/traços
+    var estrelas = ""; // declara variável que irá concatenar as estrelas/traços
     // cria um laço de repetição de 1 até o número informado
     for (var i = 1; i <= num; i++) {
         if (i % 2 == 1) {
