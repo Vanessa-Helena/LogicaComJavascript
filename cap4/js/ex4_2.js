@@ -10,7 +10,7 @@ function listaNumeros() {
 		alert("Informe um número válido...");
 		inNumero.focus();
 		return;
-	}
+	}   
 
 	// inicializa variável resposta
 	var resposta = "Entre " + numero + " e 1: ";
